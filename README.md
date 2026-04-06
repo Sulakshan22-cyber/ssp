@@ -7,4 +7,4 @@ lab 1 is about transformers
 
 <h2>lab 2</h2>
 
-lab 2 is about love
+lab 2 is about uma 
