@@ -2,11 +2,139 @@
 <html>
 <head>
  <title>Success</title>
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+  }
+  
+  .container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  h1 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+  
+  .emoji {
+    text-align: center;
+    font-size: 60px;
+    margin: 20px 0;
+  }
+  
+  .info-section {
+    background: #f8f9ff;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 5px solid #667eea;
+  }
+  
+  .info-item {
+    margin: 15px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .label {
+    font-weight: bold;
+    color: #764ba2;
+    min-width: 150px;
+  }
+  
+  .value {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .success-message {
+    text-align: center;
+    color: #28a745;
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: 500;
+  }
+  
+  .footer {
+    text-align: center;
+    color: #666;
+    margin-top: 30px;
+    font-size: 14px;
+  }
+ </style>
 </head>
 <body>
- <h1>Registration Successful BRO
-    !</h1>
- <p>Thank you, <strong><%= name %></strong>.</p>
- <p>A confirmation email has been sent to <strong><%= email %></strong>.</p>
+ <div class="container">
+  <h1>Registration Successful!</h1>
+  <div class="emoji">&#128512;</div>
+  
+  <p class="success-message">Thank you for registering, <strong><%= name %></strong>!</p>
+  
+  <div class="info-section">
+   <div class="info-item">
+    <span class="label">Name:</span>
+    <span class="value"><%= name %></span>
+   </div>
+   
+   <div class="info-item">
+    <span class="label">Email:</span>
+    <span class="value"><%= email %></span>
+   </div>
+   
+   <div class="info-item">
+    <span class="label">Phone Number:</span>
+    <span class="value"><%= phoneNumber %></span>
+   </div>
+   
+   <div class="info-item">
+    <span class="label">Age:</span>
+    <span class="value"><%= age %></span>
+   </div>
+   
+   <div class="info-item">
+    <span class="label">Religion:</span>
+    <span class="value"><%= religion %></span>
+   </div>
+   
+   <div class="info-item">
+    <span class="label">Father's Name:</span>
+    <span class="value"><%= fatherName %></span>
+   </div>
+   
+   <div class="info-item">
+    <span class="label">Mother's Name:</span>
+    <span class="value"><%= motherName %></span>
+   </div>
+  </div>
+  
+  <div class="footer">
+   <p>A confirmation email has been sent to <strong><%= email %></strong>.</p>
+   <p style="margin-top: 10px;">Have a wonderful day! &#128153;</p>
+  </div>
+ </div>
 </body>
 </html>
+
