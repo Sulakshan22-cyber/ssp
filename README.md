@@ -6,9 +6,9 @@ In Lab 2, I learned how to create web forms using **HTML** and connect them with
 
 <b>OUTPUT 1</b>
 
-<img src="image-4.png" alt="Description of image" width="300">
+<img src="images/image-4.png" alt="Description of image" width="300">
 
 <b>OUTPUT 2</b>
 
-<img src="image-5.png" alt="Description of image" width="300">
+<img src="images/image-5.png" alt="Description of image" width="300">
 
