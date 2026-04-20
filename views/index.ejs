@@ -1,141 +1,230 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Student Registration</title>
- <style>
-  * {
+<title>Student Registration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: linear-gradient(135deg, #7c99f2 0%, #a0e7f5 100%);
+    color: #2d3a56;
   }
-  
-  body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px;
+
+  .page-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
   }
-  
-  .container {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    padding: 50px;
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  h1 {
-    color: #667eea;
+
+  .hero {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
-    font-weight: 600;
+    margin-bottom: 30px;
   }
-  
+
+  h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    margin: 8px auto 0;
+    color: #3b4a6b;
+    font-size: 1rem;
+  }
+
+  .card {
+    background: #ffffffcc;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(45, 58, 86, 0.18);
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+
   form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    display: grid;
+    gap: 18px;
   }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
+
+  .field-group {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 12px;
   }
-  
-  label {
+
+  .field-group label {
     font-weight: 600;
-    color: #764ba2;
-    margin-bottom: 8px;
-    font-size: 15px;
   }
-  
-  input {
-    padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 15px;
-    font-family: inherit;
-    transition: all 0.3s ease;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #c8d2e4;
+    background: #f7f9ff;
+    transition: border-color 0.2s ease;
   }
-  
+
   input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    background-color: #f8f9ff;
+    border-color: #6c8af4;
+    background: #ffffff;
   }
-  
+
+  .button-row {
+    text-align: right;
+  }
+
   button {
-    padding: 14px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #4a73ff;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  
+
   button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(74, 115, 255, 0.25);
   }
-  
-  button:active {
-    transform: translateY(0);
+
+  .section-title {
+    margin: 0 0 18px;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
   }
- </style>
+
+  .table-card {
+    background: #ffffffcc;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(45, 58, 86, 0.14);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 620px;
+  }
+
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  thead {
+    background: #4a73ff;
+    color: white;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f3f6ff;
+  }
+
+  tbody tr:hover {
+    background: #e8eefc;
+  }
+
+  td {
+    color: #2f3b56;
+  }
+
+  .empty-message {
+    margin: 0;
+    color: #52618d;
+    font-style: italic;
+  }
+
+  @media (max-width: 720px) {
+    .field-group {
+      grid-template-columns: 1fr;
+    }
+
+    .button-row {
+      text-align: center;
+    }
+  }
+</style>
 </head>
 <body>
- <div class="container">
-  <h1>Register for Classes</h1>
-  
-  <form action="/submit" method="POST">
-   <div class="form-group">
-    <label>Name:</label>
-    <input type="text" name="studentName" required>
-   </div>
-   
-   <div class="form-group">
-    <label>Email:</label>
-    <input type="email" name="studentEmail" required>
-   </div>
-   
-   <div class="form-group">
-    <label>Phone Number:</label>
-    <input type="tel" name="phoneNumber" required>
-   </div>
-   
-   <div class="form-group">
-    <label>Age:</label>
-    <input type="number" name="age" required>
-   </div>
-   
-   <div class="form-group">
-    <label>Religion:</label>
-    <input type="text" name="religion" required>
-   </div>
-   
-   <div class="form-group">
-    <label>Father's Name:</label>
-    <input type="text" name="fatherName" required>
-   </div>
-   
-   <div class="form-group">
-    <label>Mother's Name:</label>
-    <input type="text" name="motherName" required>
-   </div>
-   
-   <button type="submit">Submit</button>
-  </form>
- </div>
+<div class="page-wrapper">
+  <header class="hero">
+    <h1>Student Registration</h1>
+    <p class="subtitle">Add student details clearly and keep your class roster organized.</p>
+  </header>
+
+  <section class="card">
+    <h2 class="section-title">Registration Form</h2>
+    <form action="/submit" method="POST">
+      <div class="field-group">
+        <label for="studentName">Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+      </div>
+
+      <div class="field-group">
+        <label for="studentEmail">Email:</label>
+        <input type="email" id="studentEmail" name="studentEmail" required>
+      </div>
+
+      <div class="field-group">
+        <label for="program">Program:</label>
+        <input type="text" id="program" name="program" required>
+      </div>
+
+      <div class="field-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="field-group">
+        <label for="icNumber">IC Number:</label>
+        <input type="text" id="icNumber" name="icNumber" required>
+      </div>
+
+      <div class="button-row">
+        <button type="submit">Submit Registration</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="table-card">
+    <h2 class="section-title">Registered Students</h2>
+    <% if (students.length === 0) { %>
+      <p class="empty-message">No students have been registered yet.</p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Program</th>
+            <th>Phone</th>
+            <th>IC Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% students.forEach(student => { %>
+            <tr>
+              <td><%= student.id %></td>
+              <td><%= student.name %></td>
+              <td><%= student.email %></td>
+              <td><%= student.program || '' %></td>
+              <td><%= student.phone || '' %></td>
+              <td><%= student.icNumber || '' %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </section>
+</div>
 </body>
 </html>
