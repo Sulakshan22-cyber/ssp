@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Edit Student</title> 
+  <link rel="stylesheet" href="/styles.css"> 
+</head> 
+<body> 
+  <main class="page-shell"> 
+    <section class="card"> 
+      <div class="panel-heading"> 
+        <h2>Edit Student Record</h2> 
+        <p>Update any student details and save the changes.</p> 
+      </div> 
+      <form action="/update/<%= student.id %>" method="POST" class="form-grid"> 
+        <div class="field-group"> 
+          <span>Name</span> 
+          <input type="text" name="studentName" value="<%= student.name %>" required> 
+        </div> 
+        <div class="field-group"> 
+          <span>Email</span> 
+          <input type="email" name="studentEmail" value="<%= student.email %>" required> 
+        </div> 
+        <div class="field-group"> 
+          <span>IC Number</span> 
+          <input type="text" name="studentIC" value="<%= student.icNumber %>" required> 
+        </div> 
+        <div class="field-group"> 
+          <span>Phone Number</span> 
+          <input type="tel" name="studentPhone" value="<%= student.phone %>" required> 
+        </div> 
+        <div class="field-group"> 
+          <span>Program</span> 
+          <input type="text" name="studentProgram" value="<%= student.program %>" required> 
+        </div> 
+        <div class="form-actions"> 
+          <button type="submit" class="btn btn-primary">Update Record</button> 
+          <a href="/" class="btn btn-secondary">Cancel</a> 
+        </div> 
+      </form> 
+    </section> 
+  </main> 
+</body> 
+</html> 

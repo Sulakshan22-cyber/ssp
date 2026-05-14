@@ -33,6 +33,7 @@ Name: Sulakshan
 id:1106232003
 
 <h1>lab 3: DATABASE SETUP AND READ/WRITE</h1>
+
 In Lab 3 about database setup and read/write operations, I learned how to create and configure a database so it can store and manage data properly. I also practiced basic operations like inserting (writing) data into tables and retrieving (reading) data using queries. This helped me understand how applications interact with databases, especially how data is structured, stored, and accessed efficiently. Overall, the lab gave me a clearer idea of how important databases are for handling information in real-world systems.
 
 
@@ -47,3 +48,23 @@ In Lab 3 about database setup and read/write operations, I learned how to create
 <b>OUTPUT 3</b>
 
 <img src="images/image-8.png" alt="Description of image" width="300">
+
+
+
+Name: Sulakshan Mahendran
+id: 1106232003
+
+<h1>lab 4:Database Setup and update/delete</h1>
+In Lab 4: Database Setup and Update/Delete, I learned how to create and set up a database structure using tables, fields, and data types. I practiced inserting records into tables and understood how databases store and organize information efficiently. I also learned how to modify existing data using UPDATE commands and remove unnecessary or incorrect records using DELETE statements while ensuring data accuracy. This lab helped me understand the importance of proper database management, data integrity, and how SQL commands are used to maintain and manage data in real-world applications.
+
+<b>OUTPUT 1</b>
+
+<img src="images/image-10.png" alt="Description of image" width="300">
+
+<b>OUTPUT 2</b>
+
+<img src="images/image-11.png" alt="Description of image" width="300">
+
+<b>OUTPUT 3</b>
+
+<img src="images/image-12.png" alt="Description of image" width="300">
